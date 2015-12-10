@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="kotleon.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="kotleon.Perspective"
+            fixed="true"
+            id="KotLeon.perspective"
+            name="Perspective">
+      </perspective>
+      <perspective
+            class="kotleon.KsiazkiPerspective"
+            id="KotLeon.Ksiazki"
+            name="Ksiazki">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="View"
+            class="kotleon.View"
+            id="KotLeon.view">
+      </view>
+      <view
+            class="kotleon.PrzegladajKsiazkiView"
+            id="KotLeon.viewPrzegladajKsiazki"
+            name="przegladajKsiazki"
+            restorable="true">
+      </view>
+      <view
+            class="kotleon.SzczegoloweInformacjeView"
+            id="KotLeon.SzczegolyView"
+            name="SzczegoloweInformacje"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions"> id="Kot<perspectiveExtension
+            targetID="*">
+      </perspectiveExtension>perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="File">
+            <command
+                  commandId="org.eclipse.ui.file.exit"
+                  label="Exit">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>
